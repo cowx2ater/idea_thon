@@ -31,8 +31,10 @@ ol, ul {
 }
 
 a {
+  color: inherit;
   text-decoration: none;
 }
+a:hover, a:active, a:focus { text-decoration: underline }
 
 body {
   line-height: 1;
@@ -40,7 +42,7 @@ body {
 
 /* top */
 .search-bar {
-  padding: 40px 20px 10px 20px;
+  padding: 30px 20px 10px 20px;
   position: relative;
   background-color: #f1f2f3;
 }
@@ -74,11 +76,13 @@ body {
 
 /* footer */
 .footer {
-  background-color: #eee;
-  height: 10vh;
+  /* background-color: #eee; */
+  height: 7vh;
   width: 100vw;
   display: flex;
   justify-content: space-around;
+  position: fixed;
+  bottom: 0;
 }
 
 /* index */
@@ -150,6 +154,10 @@ body {
 
 }
 
+.card:last-child {
+  margin-bottom: 20px;
+}
+
 .card-info {
   width: 60%;
   display: flex;
@@ -179,10 +187,13 @@ body {
   height: 5rem;
 }
 
-.slide {
-  margin: 20px 0;
+.row {
   width: 100vw;
   height: 5rem;
+}
+
+.row:last-child {
+  margin-bottom: 5rem;
 }
 
 .slide-img {
@@ -195,4 +206,8 @@ body {
   width: 20vw;
   height: inherit;
   background-color: #ddd;
+}
+
+.fas {
+  /* color: #fff; */
 }
