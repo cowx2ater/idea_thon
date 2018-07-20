@@ -108,6 +108,8 @@ body {
   background-color: #bbb;
   border-radius: 50%;
   display: inline-block;
+  background-position: center center;
+  background-size: cover;
 }
 
 .idea-info {
