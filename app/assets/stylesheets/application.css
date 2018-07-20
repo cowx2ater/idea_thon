@@ -38,6 +38,50 @@ body {
   line-height: 1;
 }
 
+/* top */
+.search-bar {
+  padding: 40px 20px 10px 20px;
+  position: relative;
+  background-color: #f1f2f3;
+}
+
+.search-bar input {
+  width: 85vw;
+  height: 30px;
+  padding: 5px 7px;
+  box-sizing: border-box;
+  border: 0;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  background-color: #ffffff;
+  font-size: 13px;
+  text-align: center;
+  transition: border-color 0.2s linear;
+}
+
+.search-bar input:focus {
+  outline: none;
+  border-color: #ffe94a;
+}
+
+.search-bar i {
+  position: absolute;
+  top: 40px;
+  left: 40px;
+  color: #bbbbbb;
+  background-color: initial;
+}
+
+/* footer */
+.footer {
+  background-color: #eee;
+  height: 10vh;
+  width: 100vw;
+  display: flex;
+  justify-content: space-around;
+}
+
+/* index */
 .container {
   /* height: 100vh; */
 }
@@ -53,7 +97,7 @@ body {
   width: 3rem;
 }
 
-.dot {
+.sample-dot {
   height: 3rem;
   width: 3rem;
   margin: 10px;
@@ -96,43 +140,59 @@ body {
   text-align: center;
 }
 
-.search-bar {
-  padding: 40px 20px 10px 20px;
-  position: relative;
-  background-color: #f1f2f3;
-}
-
-.search-bar input {
-  width: 85vw;
-  height: 30px !important
-  padding: 5px 7px;
-  box-sizing: border-box;
-  border: 0;
-  border: 1px solid transparent;
-  border-radius: 5px;
-  background-color: #ffffff;
-  font-size: 13px;
-  text-align: center;
-  transition: border-color 0.2s linear;
-}
-
-.search-bar input:focus {
-  outline: none;
-  border-color: #ffe94a;
-}
-
-.search-bar i {
-  position: absolute;
-  top: 40px;
-  left: 40px;
-  color: #bbbbbb;
-  background-color: initial;
-}
-
-.footer {
-  background-color: #eee;
-  height: 10vh;
-  width: 100vw;
+/* random */
+.card {
+  margin: 5px 0;
+  width: inherit;
+  height: 6rem;
   display: flex;
-  justify-content: space-around;
+  align-items: center;
+
+}
+
+.card-info {
+  width: 60%;
+  display: flex;
+  flex-direction: column;
+  padding-left: 2rem;
+}
+
+.card-info > h5 {
+  font-size: 0.9em;
+  font-weight: 600;
+}
+
+.card-info > p {
+  font-size: 0.8em;
+  margin-top: 1rem;
+}
+
+.card-img {
+  width: 40%;
+  height: 6rem;
+  /* padding: 10px; */
+}
+
+.sample-img {
+  background-color: #eee;
+  margin: 10px;
+  height: 5rem;
+}
+
+.slide {
+  margin: 20px 0;
+  width: 100vw;
+  height: 5rem;
+}
+
+.slide-img {
+  height: inherit;
+  display: flex;
+
+}
+
+.sample-slide-img {
+  width: 20vw;
+  height: inherit;
+  background-color: #ddd;
 }

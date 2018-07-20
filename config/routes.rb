@@ -1,7 +1,8 @@
 Rails.application.routes.draw do
   root 'home#index'
+  get '/random' => 'home#random'
 
-  resources :home, only: [:index, :show]
+  resources :home, only: [:index]
 
   devise_for :admin_users, ActiveAdmin::Devise.config
   ActiveAdmin.routes(self)
