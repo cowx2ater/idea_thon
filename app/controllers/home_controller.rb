@@ -4,5 +4,6 @@ class HomeController < ApplicationController
   end
 
   def random
+    @teams = Team.random(15)
   end
 end

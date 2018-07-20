@@ -3,20 +3,23 @@
 <div class="container">
   <% @teams.each do |team| %>
     <div class="row" >
-      <div class="idea" style="margin-top: 0;">
-        <div class="idea-info">
-          <div class="idea-img">
-            <span class="sample-dot"></span>
+      <a href="<%= team.url %>" target="_blank">
+        <div class="idea" style="margin-top: 0;">
+          <div class="idea-info">
+            <div class="idea-img">
+              <span class="sample-dot"></span>
+            </div>
+            <div class="idea-text">
+              <h3><%= team.name %></h3>
+              <p><%= team.desc %></p>
+            </div>
           </div>
-          <div class="idea-text">
-            <h3><%= team.name %></h3>
-            <p><%= team.desc %></p>
+          <div class="vote">
+            <span class="red-dot"><%= team.try("cnt") %></span>
           </div>
         </div>
-        <div class="vote">
-          <span class="red-dot"><%= team.try("cnt") %></span>
-        </div>
-      </div>
+      </a>
+
     </div>
   <% end %>
 
