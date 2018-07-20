@@ -201,6 +201,8 @@ body {
 .slide-img {
   height: inherit;
   display: flex;
+  background-position: center center;
+  background-size: cover;
 
 }
 
