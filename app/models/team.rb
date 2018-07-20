@@ -64,6 +64,12 @@ class Team < ApplicationRecord
     end
   end
 
+  def self.random(num)
+    offset = rand(self.count)
+
+    return offset(offset).limit(num)
+  end
+
   def recent_vote
     votes.order(crawl_date: :desc).first
   end
