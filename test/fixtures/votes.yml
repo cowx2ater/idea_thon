@@ -1,0 +1,9 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  team: one
+  crawl_date: 2018-07-21 03:16:07
+
+two:
+  team: two
+  crawl_date: 2018-07-21 03:16:07

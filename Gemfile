@@ -6,6 +6,7 @@ git_source(:github) do |repo_name|
 end
 gem 'active_admin_flat_skin'
 gem "font-awesome-rails"
+gem 'delayed_job_active_record'
 gem 'activeadmin', github: 'activeadmin'
 gem 'devise'
 gem 'mechanize'
@@ -13,7 +14,9 @@ gem 'figaro'
 # Bundle edge Rails instead: gem 'rails', github: 'rails/rails'
 gem 'rails', '~> 5.1.6'
 # Use sqlite3 as the database for Active Record
-gem 'sqlite3'
+gem 'sqlite3', :group => :development
+gem 'pg', '~> 0.21', :group => :production
+gem 'rails_12factor', :group => :production
 # Use Puma as the app server
 gem 'puma', '~> 3.7'
 # Use SCSS for stylesheets
