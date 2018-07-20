@@ -24,12 +24,14 @@ class Team < ApplicationRecord
       name = i.search(".idea__head").text.strip
       desc = i.search(".idea__text").text.strip
       url = i.search(".hit").search("a").to_s.split("href=\"")[1].split("\">")[0]
+      image = i.search(".user__img").to_s.split("<img src=\"")[1].split("\"")[0]
       p "투표수 : " + i.search(".idea__votes").text.strip
       p "팀 명 : " + name
       p "팀 소개 : " + desc
       p "팀 url : " + url
       p "-----------------------"
-      self.find_or_create_by!(name: name, desc: desc, url: "https://uni.likelion.org"+url)
+      team = self.find_or_create_by(name: name, desc: desc, url: "https://uni.likelion.org"+url)
+      team.update(image: image)
     end
   end
 

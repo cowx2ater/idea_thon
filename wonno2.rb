@@ -18,6 +18,7 @@ ideas.each do |i|
   p "팀 명 : " + i.search(".idea__head").text.strip
   p "팀 소개 : " + i.search(".idea__text").text.strip
   p "팀 url : " + i.search(".hit").search("a").to_s.split("href=\"")[1].split("\">")[0]
+  p "팀 사진 : " + i.search(".user__img").to_s.split("<img src=\"")[1].split("\"")[0]
   p "-----------------------"
 end
 
