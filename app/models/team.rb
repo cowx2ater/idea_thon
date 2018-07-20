@@ -5,6 +5,8 @@ class Team < ApplicationRecord
   has_many :users
   has_many :votes
 
+  IMG = "/assets/univ-logo-f7b42ac475d76685a746bfd55e9d9de8c5e006f9b6afb90331a72c5942da7e59.png"
+
   default_scope { order(cnt: :desc) }
 
   def self.import_team

@@ -9,7 +9,7 @@
         <p><%= team.name %></p>
       </div>
       <div class="card-img">
-        <div class="sample-img" style='background-image: url(<%= team.image %>)'></div>
+        <div class="sample-img" style='background-image: url(<%= team.image == Team::IMG ? asset_path("lion.jpg") : team.image %>)'></div>
       </div>
     </div>
   </a>
