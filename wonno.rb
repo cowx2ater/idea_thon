@@ -2,6 +2,7 @@ require 'rubygems'
 require 'mechanize'
 
 agent = Mechanize.new
+# url
 page = agent.get('http://uni.likelion.org/users/sign_in')
 
 #pp page
@@ -11,9 +12,15 @@ my_page = page.form_with(:action => '/users/sign_in') do |f|
 end.submit
 (1..1142).each do |i|
   puts i
-  a = my_page.open(:href => "/users/#{i}")
-  puts a.search('.header__content').search('h1').text.strip
-  puts a.search('.mt-2').search('span').text.strip.split(" ")[4]
+  begin
+    a = agent.get("http://uni.likelion.org/users/#{i}")
+    puts "학생 : "+a.search('.header__content').search('h1').text.strip
+    puts "email : "+a.search('.meta').search("span").text.strip
+    puts "학교 : "+a.search('.mt-2').search('span').text.strip.split(" ")[4]
+  rescue
+    puts "없습니다."
+  end
+
 end
 
 
