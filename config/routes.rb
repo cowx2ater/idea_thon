@@ -1,6 +1,7 @@
 Rails.application.routes.draw do
   root 'home#index'
   get '/random' => 'home#random'
+  get '/wonnojo' => 'home#wonnojo'
 
   resources :home, only: [:index]
 

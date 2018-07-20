@@ -215,3 +215,49 @@ body {
 .fas {
   /* color: #fff; */
 }
+
+/* wonnojo */
+.team {
+  padding-top: 5vh;
+  height: 90vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.member {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.name {
+  font-size: 2rem;
+  font-weight: 900;
+  margin-bottom: 16px;
+}
+
+.member > p {
+  font-size: 2rem;
+  margin-bottom: 16px;
+}
+
+.sns {
+  width: 8rem;
+  line-height: 4rem;
+  display: flex;
+  justify-content: space-around;
+}
+
+.icon {
+  width: 2rem;
+  height: 2rem;
+}
+
+.we {
+  text-align: center;
+
+  height: 15rem;
+  width:  15rem;
+}
