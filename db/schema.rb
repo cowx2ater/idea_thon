@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20180720165450) do
+ActiveRecord::Schema.define(version: 20180720184135) do
 
   create_table "active_admin_comments", force: :cascade do |t|
     t.string "namespace"
@@ -43,14 +43,37 @@ ActiveRecord::Schema.define(version: 20180720165450) do
     t.index ["reset_password_token"], name: "index_admin_users_on_reset_password_token", unique: true
   end
 
+  create_table "teams", force: :cascade do |t|
+    t.string "name"
+    t.string "desc"
+    t.string "url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "cnt"
+    t.index ["name"], name: "index_teams_on_name"
+  end
+
   create_table "users", force: :cascade do |t|
     t.string "name"
     t.string "univ"
     t.string "email"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.integer "team_id"
+    t.integer "lion_id"
     t.index ["name"], name: "index_users_on_name"
+    t.index ["team_id"], name: "index_users_on_team_id"
     t.index ["univ"], name: "index_users_on_univ"
+  end
+
+  create_table "votes", force: :cascade do |t|
+    t.integer "team_id"
+    t.datetime "crawl_date"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.integer "cnt"
+    t.index ["cnt"], name: "index_votes_on_cnt"
+    t.index ["team_id"], name: "index_votes_on_team_id"
   end
 
 end

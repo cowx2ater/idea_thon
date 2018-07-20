@@ -7,8 +7,19 @@ ko:
         name: 이름
         email: "email"
         univ: "대학교"
+        team: "팀명"
+      team:
+        id: "NO"
+        name: "아이디어 명"
+        desc: "소개"
+        url: "아이디어 주소"
+      vote:
+        team: 팀명
+        crawl_date: 크롤링 시간
     models:
       user: 멋사
+      team: 아이디어 팀
+      vote: 팀 투표
     errors:
       messages:
         record_invalid: 데이터 검증에 실패하였습니다. %{errors}
