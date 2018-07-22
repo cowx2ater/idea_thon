@@ -9,6 +9,29 @@ class Team < ApplicationRecord
 
   default_scope { order(cnt: :desc) }
 
+  def max_cnt
+    votes.pluck("cnt").max
+  end
+
+  def self.univ_rank(univ="동국대")
+    User.where(univ: univ).where.not(team: nil).each do |u|
+      puts u.team.max_cnt
+    end
+  end
+
+  def self.rank_id(cnt=nil)
+    team_hash = {}
+    all.each do |t|
+      team_hash[t.id] = t.max_cnt
+    end
+    team_hash.sort_by {|_key, value| value}.reverse.to_h
+    if cnt.nil?
+      team_hash.keys
+    else
+      team_hash.keys.first(cnt)
+    end
+  end
+
   def self.import_team
     agent = Mechanize.new
     # url
@@ -32,8 +55,8 @@ class Team < ApplicationRecord
       p "팀 소개 : " + desc
       p "팀 url : " + url
       p "-----------------------"
-      team = self.find_or_create_by(name: name, desc: desc, url: "https://uni.likelion.org"+url)
-      team.update(image: image)
+      team = self.find_or_create_by(url: "https://uni.likelion.org"+url)
+      team.update(name: name, desc: desc, image: image)
     end
   end
 

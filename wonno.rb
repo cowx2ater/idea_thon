@@ -15,7 +15,8 @@ end.submit
   begin
     a = agent.get("http://uni.likelion.org/users/#{i}")
     puts "학생 : "+a.search('.header__content').search('h1').text.strip
-    puts "email : "+a.search('.meta').search("span").text.strip
+    puts "email : "+a.search('.meta').search("span").text.strip.split("\n").first
+    puts "기수 : "+a.search('.mt-2').search('span').text.strip.split(" ")[0].split("년부터").first
     puts "학교 : "+a.search('.mt-2').search('span').text.strip.split(" ")[4]
   rescue
     puts "없습니다."

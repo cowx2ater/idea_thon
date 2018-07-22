@@ -18,3 +18,15 @@
 // For example, to change the default status-tag color:
 //
 //   .status_tag { background: #6090DB; }
+html .sidebar_section.panel {
+  display: none;
+}
+
+.admin_dashboard .blank_slate_container .blank_slate {
+    margin-top: 0px;
+    margin-bottom: 20px;
+}
+
+.panel h3 {
+  color: white !important;
+}

@@ -8,6 +8,8 @@ ko:
         email: "email"
         univ: "대학교"
         team: "팀명"
+        year: "년도"
+        role: "직급"
       team:
         id: "NO"
         name: "아이디어 명"

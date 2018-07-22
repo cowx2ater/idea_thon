@@ -1,4 +1,6 @@
 ActiveAdmin.register Team do
+  actions :all, except: [:new,:create,:edit,:update,:destroy]
+
 # See permitted parameters documentation:
 # https://github.com/activeadmin/activeadmin/blob/master/docs/2-resource-customization.md#setting-up-strong-parameters
 #
